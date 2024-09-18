@@ -1,17 +1,15 @@
-## Foundry
+## Meritocratic voting
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**OZ Governor and Tally work worth ERC20 (plutocratic voting - more tokens more vote weight) and ERC 721 (NFT - Yes or No voting). This project is asking the question of whether an NFT can be extended such that each NFT vote can have the weight between 0 and 1**
 
-Foundry consists of:
+This project consists of an upgradable ERC721 contract:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- Each ERC721 token starts with a default weight of 0.2
+- There's a tokenMultipliers mapping which contains many 'Multiplier's, which are structures which allows for any number of multipiers to applied to the ERC721's voting weight, to a maximum value of 1.
 
-## Documentation
+## Questions
 
-https://book.getfoundry.sh/
+Tally, and OZ Governor makes use the \_getVotingUnits function defined in ERC721VotesUpgradeable, how will it respond to a score between zero and 1, when counting votes.
 
 ## Usage
 
